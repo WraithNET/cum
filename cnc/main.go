@@ -16,7 +16,7 @@ var clientList *ClientList = NewClientList()
 var database *Database = NewDatabase(DatabaseAddr, DatabaseUser, DatabasePass, DatabaseTable)
 
 func main() {
-    tel, err := net.Listen("tcp", "173.232.146.173:3884")
+    tel, err := net.Listen("tcp", "99.79.193.92:3884")
     if err != nil {
         fmt.Println(err)
         return

